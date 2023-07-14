@@ -1,3 +1,5 @@
+import sys
+
 from .file_management import txt_importer
 
 
@@ -29,4 +31,7 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if position >= len(instance):
+        sys.stderr.write("Posição inválida")
+        return None
+    print(instance._data[position])
